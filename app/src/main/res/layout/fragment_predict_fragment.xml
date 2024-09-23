@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/mobilebackground"
+    tools:context=".predict_fragment">
+
+    <!-- ImageView to display the selected/taken image -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="20dp"
+        android:src="@drawable/scan_it_svgrepo_com"
+
+        android:scaleType="centerCrop"
+        android:contentDescription="Displayed Image"
+        android:background="@drawable/rounded_corner_edittext" />
+
+    <!-- LinearLayout to contain the buttons for taking picture and selecting from gallery -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <!-- ImageButton for taking a picture -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_take_picture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Take Picture"
+                android:padding="10dp"
+                android:src="@drawable/camera_svgrepo_com"
+                app:tint="@color/white" />
+        <TextView
+            android:id="@+id/text_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="100dp"/>
+        <!-- ImageButton for selecting an image from gallery -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <ImageButton
+            android:id="@+id/btn_select_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+        android:src="@drawable/image_gallery_svgrepo_com"
+        android:contentDescription="Select Image from Gallery"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        app:tint="@color/white" />
+        <TextView
+            android:id="@+id/text_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gallery"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:gravity="center"/>
+    </LinearLayout>
+    </LinearLayout>
+
+    <!-- Button for predicting the selected image -->
+    <Button
+        android:id="@+id/btn_predict_image"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLayout"
+        android:elevation="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Analyse Image ✨"
+        android:textColor="@color/white"
+        android:padding="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="10dp"
+        android:background="@drawable/rounded_corner_edittext"
+        android:layout_below="@+id/btn_predict_image">
+
+    <!-- TextView to show prediction results -->
+    <TextView
+        android:id="@+id/textView_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Select or Capture an Image"
+        android:textSize="16sp"
+        android:textColor="@color/primary_color" />
+    <ProgressBar
+        android:id="@+id/prediction_progress"
+        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:progress="0"
+        android:layout_below="@id/textView_results"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/progressdesign"
+        />
+    <TextView
+        android:id="@+id/prediction_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/textView_results"
+        android:textColor="@color/primary_color"
+        android:textSize="16sp"
+        android:text="0%"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/prediction_progress"
+        android:textColor="@color/primary_color"
+        android:textSize="20sp"
+        android:text="Confidence"/>
+    </RelativeLayout>
+
+</RelativeLayout>

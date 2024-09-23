@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="predict"
+        android:icon="@drawable/scan_it_svgrepo_com"
+        android:id="@+id/menu_chat"
+        />
+
+    <item android:title="Profile"
+        android:icon="@drawable/person_border_svgrepo_com"
+        android:id="@+id/menu_profile"
+        />
+
+</menu>

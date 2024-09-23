@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#3F9C43</color>
+    <color name="secondary">#FFEC78</color>
+    <color name="gray">#C3C3C3</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="offwhite">#FAFAFA</color>
+    <color name="camera">#DCDCDC</color>
+    <color name="chat_coler_sender">#028FFF</color>
+    <color name="chat_coler_reciver">#CBCED2</color>
+    <color name="backgroung">#303030</color>
+
+</resources>
