@@ -81,8 +81,8 @@ cd CropCare_AI
 - Build and run the project on an emulator or a physical device.
   
 ## Tflite Model
-Trained Model: https://drive.google.com/file/d/1-6GWS2XKvH_kqoqigTSZYNepUSVIWz1F/view?usp=sharing
-Java code for using Tflite Model in Android app
+- **Trained Model**: https://drive.google.com/file/d/1-6GWS2XKvH_kqoqigTSZYNepUSVIWz1F/view?usp=sharing
+- Java code for using Tflite Model in Android app
 ```bash
 try {
     Finalmodel model = Finalmodel.newInstance(context);
