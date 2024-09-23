@@ -4,11 +4,15 @@ CropCare AI is an Android application designed to predict crop diseases using a 
 The current version of the model is trained specifically for potato diseases as a demo. However, models for other crops and diseases can be developed and integrated into the app, making it a versatile tool for detecting a wide range of crop diseases.
 ## Interface
 ![1](https://github.com/user-attachments/assets/27a85e53-d6e2-419e-8abd-f8d80beab434)
-![6](https://github.com/user-attachments/assets/1a6d80b6-4a89-4504-8efd-697844118a80)
-![5](https://github.com/user-attachments/assets/c2ff75ff-4405-4b23-9bc5-4d819b675709)
-![4](https://github.com/user-attachments/assets/cc52edc6-e442-4e82-89a0-1b09fb7d8907)
-![3](https://github.com/user-attachments/assets/5ee11a3c-7607-4f11-8bfb-4a03250fa667)
 ![2](https://github.com/user-attachments/assets/62e502ce-439d-4e67-bc78-0347e678f53b)
+![3](https://github.com/user-attachments/assets/5ee11a3c-7607-4f11-8bfb-4a03250fa667)
+![4](https://github.com/user-attachments/assets/cc52edc6-e442-4e82-89a0-1b09fb7d8907)
+![5](https://github.com/user-attachments/assets/c2ff75ff-4405-4b23-9bc5-4d819b675709)
+![6](https://github.com/user-attachments/assets/1a6d80b6-4a89-4504-8efd-697844118a80)
+
+
+
+
 
 
 
@@ -55,8 +59,8 @@ The project uses the following permissions:
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/yourusername/chat-application.git
-cd chat-application
+git clone https://github.com/aditya6021/CropCare_AI.git
+cd CropCare_AI
 ```
 ### Open the project in Android Studio:
 
@@ -75,24 +79,43 @@ cd chat-application
 
 - Sync the project with Gradle files.
 - Build and run the project on an emulator or a physical device.
+  
+## Tflite Model
+Trained Model: https://drive.google.com/file/d/1-6GWS2XKvH_kqoqigTSZYNepUSVIWz1F/view?usp=sharing
+Java code for using Tflite Model in Android app
+```bash
+try {
+    Finalmodel model = Finalmodel.newInstance(context);
+
+    // Creates inputs for reference.
+    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 256, 256, 3}, DataType.FLOAT32);
+    inputFeature0.loadBuffer(byteBuffer);
+
+    // Runs model inference and gets result.
+    Finalmodel.Outputs outputs = model.process(inputFeature0);
+    TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+
+    // Releases model resources if no longer used.
+    model.close();
+} catch (IOException e) {
+    // TODO Handle the exception
+}
+```
 
 ## Usage
 
-#### Login:
+### Predict Crop Disease:
+- Upload or take a photo of a crop leaf.
+- Use the prediction feature to detect any disease affecting the crop.
+- The app will display the results based on the TensorFlow Lite model's analysis.
 
-- Open the app and log in using your email and password.
-- If you don't have an account, sign up using the provided sign-up option.
 
-#### Chat:
-
-- Search for other users by their username.
-- Start a chat by selecting a user from the search results.
-- Send and receive messages in real-time.
-
-#### Profile:
-
-- Upload a profile picture by selecting the profile picture option.
-- Update your username in the profile settings.
+### Profile Management:
+- Log in with OTP.
+- Edit your profile details, in the profile section.
+- 
+## APK of Application
+https://drive.google.com/file/d/1199jn3GoH9peuyFlHKEqa6dfmyYi2zlm/view?usp=sharing
 
 ## Contact
 For any questions or suggestions, feel free to contact adityapratapsingh273@gmail.com.
